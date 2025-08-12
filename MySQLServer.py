@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 
 try:
     server = mysql.connector.connect(
@@ -18,5 +17,5 @@ try:
     cursor.close()
     server.close()
 
-except Error as e:
+except mysql.connector.Error as e:
     print("Error while connecting to MySQL:", e)
