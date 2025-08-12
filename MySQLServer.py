@@ -10,7 +10,7 @@ try:
 
     cursor = server.cursor()
     cursor.execute("DROP DATABASE IF EXISTs alx_book_store")
-    my_db = cursor.execute("CREATE DATABASE alx_book_store")
+    my_db = cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
     server.commit
     if server.is_connected():
         print("Database 'alx_book_store' created successfully!")
